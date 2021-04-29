@@ -97,7 +97,7 @@ final class DateBasedStreamHandler extends AbstractProcessingHandler {
 	/**
 	 * @inheritdoc
 	 */
-	protected function write( array $record ) {
+	protected function write( array $record ): void {
 
 		$this->stream_handler_for_record( $record )
 			->write( $record );
@@ -106,7 +106,7 @@ final class DateBasedStreamHandler extends AbstractProcessingHandler {
 	/**
 	 * @inheritdoc
 	 */
-	public function close() {
+	public function close(): void {
 
 		$this->handlers and array_walk(
 			$this->handlers,
